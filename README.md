@@ -8,6 +8,12 @@ This can be used as a command line utility or as a class
 This uses a modified version of PortScan forked from [Aperocky/PortScan](https://github.com/Aperocky/PortScan).
 A [Pull Request](https://github.com/Aperocky/PortScan/pull/1) has been submitted, but there has not been a commit since 2019.
 
+## Changes 
+removed 
+
+https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests
+
+
 ## Requirements
     - Pillow ~= 9.2.0
     - beard-portscan ~= 0.1.5

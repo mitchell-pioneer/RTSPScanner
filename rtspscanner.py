@@ -91,6 +91,7 @@ class RTSPScanner:
                 self.portscan.q.not_full.notify_all()
         #if self.verbose:
             #print(results)
+        flaky = []
         for result in results:
             if result:
                 for path in self.paths:
@@ -102,7 +103,7 @@ class RTSPScanner:
                             print(status)
                         snapshot = f"/tmp/test.png"
                         thumbnail = f"/tmp/test.webp"
-                        flaky = []
+
                         command = ['ffmpeg', '-y', '-frames', '1', snapshot, '-rtsp_transport', 'tcp', '-i', rtsp]
                         for x in range(0,self.retries):
                             try:
@@ -228,8 +229,8 @@ if __name__ == "__main__":
         parser.add_argument('-c','--creds',required=False,default="none",
                             help="csv formatted user:password pairs: username:password,user:pass")
         
-        parser.add_argument('-m','--mode',type=str,required=True,
-                            help="add - add cameras found / rem - remove cameras found")
+        parser.add_argument('-m','--mode',type=str,required=True,default="add",
+                             help="add - add cameras found / rem - remove cameras found")
         
         parser.add_argument('-A','--apiaddr',type=str,required=False,default="192.168.0.100",
                             help="rtsp-simple-server API IP Address/FQDN")
@@ -253,7 +254,7 @@ if __name__ == "__main__":
         return args
 
     def main():
-        system('stty sane')
+#        system('stty sane')
         args = vars(cla())
         #print(args)
         scanner = RTSPScanner()

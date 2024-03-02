@@ -1,6 +1,6 @@
 from pathlib import Path
 from setuptools import find_packages, setup
-dependencies = ['beard-portscan','Pillow']
+dependencies = ['beard-portscan','Pillow','requests']
 # read the contents of README file
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
