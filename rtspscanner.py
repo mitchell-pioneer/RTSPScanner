@@ -319,7 +319,7 @@ if __name__ == "__main__":
         print(f"\nPaths Used:")
         for path in scanner.paths:
             print(f"  {path}")
-        system('stty sane')
+        #system('stty sane')
         
     main()
     
